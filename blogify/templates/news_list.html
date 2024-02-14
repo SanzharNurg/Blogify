@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'news_list_styles.css' %}" />
+
+{% block content %}
+<div class="news-grid" style="margin-left: 5%;">
+    {% for post in posts %}
+        <section class="news-card">
+            <a href="{% url 'news_detail_page' post.id %}">
+                <img style="max-height: 300px; max-width: 100%; border-radius: 35px;" src="{{post.image}}">
+            </a>
+            <div class="news-card-section">
+                <h1>{{post.title}}</h1>
+            </div>
+            <div class="news-card-section" 
+            style="height: 230px; max-height: 230px; overflow: hidden; margin-top: 10px; font-size: large;
+             font-family: Georgia, 'Times New Roman', Times, serif; font-weight: bolder; 
+             white-space: normal; word-wrap: break-word;">
+                <p>{{post.content}}</p>
+            </div>
+        </section>    
+    {% endfor %}
+</div>
+    
+{% endblock %}
+

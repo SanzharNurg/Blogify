@@ -1,0 +1,19 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<section class="detail-container">
+    <img class="detail-image" src="{{post.image}}" alt="Post Image">
+    <a href="{% url 'news_page' %}"
+            style="background-color: black; padding: 10px; color: aliceblue; font-size: 25px; margin-top: 10px;">Back</a>
+
+    <h1 class="news-header">{{ post.title }}</h1>
+    
+    <section class="detail-content">
+        <p>{{ post.content }}</p>
+
+    </section>
+
+</section>
+
+{% endblock %}
